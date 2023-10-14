@@ -2,11 +2,6 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import About from "./pages/About";
-import Home from "./pages/Home";
-import Root from "./layout/Root";
-
 export const ApplicationHome = () => {
   const [count, setCount] = useState(0);
 
@@ -36,25 +31,8 @@ export const ApplicationHome = () => {
   );
 };
 
-const router = createBrowserRouter([
-  {
-    element: <Root />,
-    children: [
-      {
-        index: true,
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-    ],
-  },
-]);
-
 function App() {
-  return <RouterProvider router={router} />;
+  return <ApplicationHome />;
 }
 
 export default App;

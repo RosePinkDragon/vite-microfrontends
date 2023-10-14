@@ -7,9 +7,9 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: "parent-app",
+      name: "parentApp",
       remotes: {
-        "child-app": "http://localhost:5174/assets/remoteEntry.js",
+        childApp: "http://localhost:5174/assets/remoteEntry.js",
       },
       shared: ["react", "react-dom"],
     }),

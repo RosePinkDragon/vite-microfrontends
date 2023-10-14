@@ -7,10 +7,10 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: "child-app",
+      name: "childApp",
       filename: "remoteEntry.js",
       exposes: {
-        "./App": "./src/App.tsx",
+        "./App": "./src/main.tsx",
       },
       shared: ["react", "react-dom"],
     }),
