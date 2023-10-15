@@ -1,20 +1,11 @@
 import Routes from "./routes";
 
-const data: {
-  appNames: string[];
-} = {
+const data = {
   appNames: ["childApp"],
 };
 
 function App() {
-  return (
-    <>
-      <div>
-        <h2>Parent App</h2>
-        <Routes appNames={data.appNames} />
-      </div>
-    </>
-  );
+  return <Routes appNames={data.appNames} />;
 }
 
 export default App;

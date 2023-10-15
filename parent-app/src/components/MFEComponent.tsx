@@ -9,7 +9,7 @@ const MFEComponent = (props: {
     mountPoint,
     initialPathname,
   }: {
-    mountPoint: any;
+    mountPoint: HTMLDivElement;
     initialPathname: string;
   }) => any;
 }) => {

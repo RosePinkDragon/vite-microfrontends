@@ -11,7 +11,7 @@ export default defineConfig({
       remotes: {
         childApp: "http://localhost:5174/assets/remoteEntry.js",
       },
-      shared: ["react", "react-dom"],
+      shared: ["react", "react-dom", "react-router-dom"],
     }),
   ],
   build: {

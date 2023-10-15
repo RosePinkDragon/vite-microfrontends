@@ -12,7 +12,6 @@ export default defineConfig({
       exposes: {
         "./App": "./src/main.tsx",
       },
-      shared: ["react", "react-dom"],
     }),
   ],
   build: {
