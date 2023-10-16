@@ -23,10 +23,11 @@ const MFEComponent = (props: {
   useEffect(() => {
     const navigationEventHandler = (event: Event) => {
       const pathname = (event as CustomEvent<string>).detail;
-      const newPathname = `${baseName}${pathname}`;
+      const newPathname = baseName + pathname;
       if (newPathname === location.pathname + location.search) return;
       navigate(newPathname);
     };
+
     window.addEventListener(
       `[${routingPrefix} navigated]`,
       navigationEventHandler
@@ -51,13 +52,16 @@ const MFEComponent = (props: {
   }, [baseName, location]);
 
   const unmountRef = useRef(() => {});
+  const firstRunRef = useRef(true);
 
   useEffect(() => {
+    if (!firstRunRef.current) return;
     unmountRef.current = mount({
       mountPoint: wrapperRef.current!,
       initialPathname:
         location.pathname.replace(baseName, "") + location.search,
     });
+    firstRunRef.current = false;
   }, [baseName, location, mount]);
 
   useEffect(() => unmountRef.current, []);
